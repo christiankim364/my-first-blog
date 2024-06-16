@@ -119,6 +119,8 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+STATICFILES_DIRS = [BASE_DIR / "blog/static",]
+
 #Fixed my original error, changed STATIC_URL=BASE_DIR... to STATIC_ROOT...
 STATIC_ROOT=BASE_DIR / 'static'
 
