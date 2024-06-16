@@ -1,4 +1,6 @@
 from django.shortcuts import render
+#Added this https://tutorial.djangogirls.org/en/extend_your_application/
+from . import views
 
 # Create your views here.
 def post_list(request):
