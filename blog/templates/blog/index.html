@@ -1,0 +1,43 @@
+<!--Type Shift+1-->
+<!--Show live server preview-->
+<!--Use Ctrl+Q to reset live server, replaced on my keybinding-->
+
+<!--REMEMBER TO ADD THIS OR IT WONT SHOW UP-->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <title>Document</title>
+</head>
+<body>
+<div class="background">  
+    <h1>Sign Into: Christian Kim's Blog</h1>
+
+        <p><b>
+        Sign into my website. This is going to add security controls so only
+        authorized users can uses this website. If you don't have a account 
+        you can sign up below</b></p>
+    
+        <div class="signin">
+       <h3>Sign In:</h3>
+        </div>
+        
+        <div class="username">
+        <b><p>Username:</p></b>
+        </div>
+
+        <div class="password">
+        <b><p>Password:</p></b>
+        </div>
+        
+        <div class="signup">
+        <b><p>No Account? 
+        <br>Sign Up Here:</p></b>
+        </div>
+</div>  
+</body>
+</html>

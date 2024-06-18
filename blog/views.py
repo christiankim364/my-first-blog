@@ -15,3 +15,9 @@ def aboutme(request):
 def resources(request):
     return render(request, 'blog/resources.html', {})
 
+def index(request):
+    return render(request, 'blog/index.html', {})
+
+def signup(request):
+    return render(request, 'blog/signup.html', {})
+

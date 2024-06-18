@@ -1,0 +1,42 @@
+<!--Type Shift+1-->
+<!--Show live server preview-->
+<!--Use Ctrl+Q to reset live server, replaced on my keybinding-->
+
+<!--REMEMBER TO ADD THIS OR IT WONT SHOW UP-->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+<div class="background">  
+    <h1>Sign up for my website: Christian Kim's Blog</h1>
+
+        <p><b>
+        Sign up for my website, For passwords they (Must be 10 characters long, with a special character "@!%+?").
+        <br>Password complexity will make it harder to crack your password!
+        </b></p>
+    
+        <div class="signin">
+       <h3>Sign Up Below:</h3>
+        </div>
+        
+        <div class="username">
+        <b><p>Enter a username:</p></b>
+        </div>
+
+        <div class="password">
+        <b><p>Enter a Password:</p></b>
+        </div>
+        
+        <div class="signup">
+        <b><p>Go back to sign in page:</p></b>
+        </div>
+</div>  
+</body>
+</html>
