@@ -17,26 +17,20 @@
 <div class="background">  
     <h1>Sign up for my website: Christian Kim's Blog</h1>
 
-        <p><b>
-        Sign up for my website, For passwords they (Must be 10 characters long, with a special character "@!%+?").
-        <br>Password complexity will make it harder to crack your password!
-        </b></p>
-    
-        <div class="signin">
-       <h3>Sign Up Below:</h3>
-        </div>
-        
-        <div class="username">
-        <b><p>Enter a username:</p></b>
-        </div>
-
-        <div class="password">
-        <b><p>Enter a Password:</p></b>
-        </div>
-        
-        <div class="signup">
-        <b><p>Go back to sign in page:</p></b>
-        </div>
+		{% if messages %}
+			
+			{% for message in messages %}
+			<p>{{message}}</p>
+			{% endfor %} 
+			
+		{% endif %}
+		<form method="post" action="">
+        {%csrf_token %}
+		{{form.as_p}}
+		<input type="submit" />
+		</form>
+		</div>
+		
 </div>  
 </body>
 </html>

@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from django.contrib.auth import views as auth_views
 
 
 #I had trouble figuring out how to add the links to other webpages
@@ -7,10 +8,10 @@ from . import views
 #Replaced
 urlpatterns = [
     path('', views.index, name='index'),
+    path('signup/', views.signup, name='signup'),
     path('post_list/', views.post_list, name='post_list'),
     path('aboutme/', views.aboutme, name='aboutme'),
     path('resources/', views.resources, name='resources'),
     path('topics/', views.topics, name='topics'),
-    path('index/', views.index, name='index'),
-    path('signup/', views.signup, name='signup'),
+    path('login/', auth_views.LoginView.as_view(template_name='blog/index.html'), name='login'),
 ]

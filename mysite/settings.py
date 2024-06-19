@@ -119,6 +119,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+#When the user logins you redirect to the post_list page
+LOGIN_REDIRECT_URL = 'post_list'
+
+#When the user logs out you redirect to login page
+LOGOUT_REDIRECT_URL = 'signin'
+
 STATICFILES_DIRS = [BASE_DIR / "blog/static",]
 
 #Fixed my original error, changed STATIC_URL=BASE_DIR... to STATIC_ROOT...
