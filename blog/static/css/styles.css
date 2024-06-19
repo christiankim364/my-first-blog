@@ -1,51 +1,10 @@
+/*Deleted my other CSS because I changed my layout, used the default Django login and signup form. Styles the portion for the password, overall background color*/
 /*Styles the portion for the username*/
-
-.signin{
-    background-color: lightgreen;
-    border-color: black;
-    font-size: 15px;
-    color: black;
-    border-top: solid;
-    padding: 5px;
-}
-/*Styles the portion for the username*/
-.username{
-    background-color: lightblue;
-    border-color: black;
-    font-size: 15px;
-    color: black;
-    border-top: solid;
-    padding: 5px;
-
-}
-/*Styles the portion for the password*/
-.password{
-    background-color: lightcoral;
-    border-color: black;
-    font-size: 15px;
-    color: black;
-    border-top: solid;
-    padding: 5px;
-
-}
-/*Styles the portion for the signup*/
-.signup{
-    background-color:bisque;
-    border-color: black;
-    font-size: 15px;
-    color: black;
-    border-top: solid;
-    border-bottom: none;
-    padding: 5px;
-
-}
 /*Styles the portion for the password, overall background color*/
 .background{
     background-color: lightgray;
-    font-size: 15px;
-    border-style: solid;
-}
 
+}
 body {
     font-family: Times, sans-serif;
     line-height: 2;
@@ -109,4 +68,3 @@ main {
 	color: white;
 	text-align: center;
 }
-
