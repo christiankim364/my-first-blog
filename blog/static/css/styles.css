@@ -1,65 +1,60 @@
 /*Deleted my other CSS because I changed my layout, used the default Django login and signup form. Styles the portion for the password, overall background color*/
 /*Styles the portion for the username*/
 /*Styles the portion for the password, overall background color*/
-.background{
+.background{ /*Sets background to lightgray*/
     background-color: lightgray;
 
 }
-body {
+body { /*Styles the body of the webpage*/
     font-family: Times, sans-serif;
     line-height: 2;
     margin: 0;
     padding: 0;
 }
 
-.container {
-    width: 85%;
-    margin: 0 auto;
-}
-
-.imagelink {
+.imagelink { /*Positions the image link*/
     position: absolute;
     top: 30px;
     left: 10px;
 }
 
-.imagelink img {
+.imagelink img { /*Sets width and height of image*/
     width: 100px; 
     height: 100px; 
 }
 
-.header {
+.header { /*sets background to rosybrown, text to white, padding */
     background: rosybrown;
     color: white;
     padding: 1rem 0;
     text-align: center;
 }
 
-header h1 {
+header h1 { /*Sets header margin to 0*/
     margin: 0;
 }
 
-nav ul {
+nav ul { /*Gets rid of default bullet points and adds padding*/
     list-style: none;
     padding: 0;
 }
 
-nav ul li {
+nav ul li {  /*Makes the list horizontal by using inline*/
     display: inline;
     margin: 0 15px;
 }
 
-nav ul li a {
+nav ul li a {  /*Styles the hyperlinks to the other pages, sets the link color, removes the links underline*/
     color: #fff;
     text-decoration: none;
 }
 
-main {
+main { /*Styles the main element*/
     padding: 20px;
     min-height: 400px; 
 }
 
-.footer {
+.footer { /*Styles the footer*/
 	left: 0;
 	bottom: 0;
 	width: 100%;
