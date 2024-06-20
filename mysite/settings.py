@@ -146,7 +146,7 @@ SECURE_CONTENT_TYPE_NOSNIFF=True
 
 #This makes non-HTTPS such HTTP requests autoamtically redirect to HTTPS 
 #(HTTPS uses TLS not SSL, prevents on-path or man in the middle attacks)
-SECURE_SSL_REDIREC=True
+SECURE_SSL_REDIRECT=True
 
 #This also prevents on-path or MITM attacks, forcing HTTPS connection
 SECURE_HSTS_SECONDS = 86400
