@@ -17,6 +17,16 @@
 		<!--Finally we can apply the same logic to the home page image, static relates to css and images-->
 		<a href="{% url 'post_list' %}"><img src="{% static 'images/home.png' %}" alt="Home"></a>
     </div>
+	
+	<div class="signout">
+	<!--Got the logout function from this source, need to edit views.py and urls.py as well: https://www.codeswithpankaj.com/post/create-a-login-logout-system-in-django-step-by-step-instructions-->
+			<h4>Click here to log out:</h4>
+	<form method="post" action="{% url 'logout' %}">
+					{% csrf_token %}
+					<input type="submit" value="Logout">
+					</form>
+	</div>
+	
     <div class="header">
         <div class="container">
             <h1>CompTIA Security+ Studies</h1>
@@ -86,12 +96,7 @@
                 <li>5.4 – Risk Management</li>
                 <li>5.5 – Data Privacy</li>
             </ul>
-			<!--Got the logout function from this source, need to edit views.py and urls.py as well: https://www.codeswithpankaj.com/post/create-a-login-logout-system-in-django-step-by-step-instructions-->
-			<h4>Click here to log out</h4>
-	<form method="post" action="{% url 'logout' %}">
-					{% csrf_token %}
-					<input type="submit" value="Logout">
-					</form>
+			
 			
     </main>
     <div class="footer">

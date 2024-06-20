@@ -9,18 +9,37 @@ body { /*Styles the body of the webpage*/
     font-family: Times, sans-serif;
     line-height: 2;
     margin: 0;
-    padding: 0;
+	border: solid; /*Added this 6/20/24, trying to make the website look better*/
+    border-color: black; /*Added this 6/20/24, trying to make the website look better*/
 }
 
 .imagelink { /*Positions the image link*/
     position: absolute;
-    top: 30px;
-    left: 10px;
+    top: 18px; /*Edited this 6/20/24,*/
+    left: 5%; /*Edited this 6/20/24,*/
+}
+
+.imagelink:hover { /*Edited this 6/20/24,*/
+    opacity: 0.5;
+}
+
+.imagelink:active{ /*Edited this 6/20/24,*/
+	opacity: 0.3;
 }
 
 .imagelink img { /*Sets width and height of image*/
     width: 100px; 
     height: 100px; 
+	border-radius: 30%; /*Edited this 6/20/24,*/
+	
+}
+
+.signout { /*Positions the image link*/
+    position: absolute;
+    top: 20px; /*Edited this 6/20/24,*/
+    right: 5%; /*Edited this 6/20/24,*/
+	color: white;
+	text-align: center;
 }
 
 .header { /*sets background to rosybrown, text to white, padding */
@@ -28,6 +47,8 @@ body { /*Styles the body of the webpage*/
     color: white;
     padding: 1rem 0;
     text-align: center;
+	border-bottom: solid; /*Added this 6/20/24, trying to make the website look better*/
+    border-color: black; /*Added this 6/20/24, trying to make the website look better*/
 }
 
 header h1 { /*Sets header margin to 0*/
@@ -62,4 +83,6 @@ main { /*Styles the main element*/
 	background-color: lightpink;
 	color: white;
 	text-align: center;
+	border-top: solid; /*Added this 6/20/24, trying to make the website look better*/
+    border-color: black; /*Added this 6/20/24, trying to make the website look better*/
 }

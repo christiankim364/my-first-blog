@@ -21,6 +21,16 @@
 		
 
     </div>
+	
+	<div class="signout">
+	<!--Got the logout function from this source, need to edit views.py and urls.py as well: https://www.codeswithpankaj.com/post/create-a-login-logout-system-in-django-step-by-step-instructions-->
+	<h4>Click here to log out:</h4>
+	<form method="post" action="{% url 'logout' %}">
+					{% csrf_token %}
+					<input type="submit" value="Logout">
+					</form>
+	</div>
+	
 	<!--How to create a header: "https://www.w3schools.com/howto/howto_css_style_header.asp"-->
     <div class="header">
 	<!--Created a container so container elements will be 85% and a margin of 0 auto:-->
@@ -64,13 +74,6 @@
             <h3>About CompTIA</h3>
 	<p>CompTIA stands for "The Computing Technology Industry Association". They provide certificates ranging from A+, Network+, Security+, Cloud+, Linux+, Server+, etc. These certificates are all well respected and help validate the skills of those who hold them.</p> 
 
-
-<!--Got the logout function from this source, need to edit views.py and urls.py as well: https://www.codeswithpankaj.com/post/create-a-login-logout-system-in-django-step-by-step-instructions-->
-	<h4>Click here to log out</h4>
-	<form method="post" action="{% url 'logout' %}">
-					{% csrf_token %}
-					<input type="submit" value="Logout">
-					</form>
 	</main>
 	<!--Creating a fixed footer Source: "https://www.w3schools.com/html/tryit.asp?filename=tryhtml_lists_unordered"-->
     <div class="footer">

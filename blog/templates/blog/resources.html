@@ -17,6 +17,15 @@
 		<!--Finally we can apply the same logic to the home page image, static relates to css and images-->
 		<a href="{% url 'post_list' %}"><img src="{% static 'images/home.png' %}" alt="Home"></a>
     </div>
+	
+	<div class="signout">
+	<!--Got the logout function from this source, need to edit views.py and urls.py as well: https://www.codeswithpankaj.com/post/create-a-login-logout-system-in-django-step-by-step-instructions-->
+			<h4>Click here to log out</h4>
+	<form method="post" action="{% url 'logout' %}">
+					{% csrf_token %}
+					<input type="submit" value="Logout">
+					</form>
+	</div>
     <div class="header">
         <div class="container">
             <h1>CompTIA Security+ Studies</h1>
@@ -60,12 +69,7 @@
                 <li><b>CompTIA Security+ Exam Prep 4+ iPad App:</b> This app was made by Thanh Hung to help you pass the SY0-601 and SY0-701 exams. Each question has explainations for the correct and incorrect answers. App Store: <a href="https://apps.apple.com/us/app/comptia-security-exam-prep/id1501784033">CompTIA Security+ Exam Prep 4+</a>.</li>
             </ul>
 			
-			<!--Got the logout function from this source, need to edit views.py and urls.py as well: https://www.codeswithpankaj.com/post/create-a-login-logout-system-in-django-step-by-step-instructions-->
-			<h4>Click here to log out</h4>
-	<form method="post" action="{% url 'logout' %}">
-					{% csrf_token %}
-					<input type="submit" value="Logout">
-					</form>
+			
 			
     </main>
     <div class="footer">

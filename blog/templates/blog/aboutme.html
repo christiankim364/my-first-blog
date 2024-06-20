@@ -21,6 +21,16 @@
 		<!--Finally we can apply the same logic to the home page image, static relates to css and images-->
 		<a href="{% url 'post_list' %}"><img src="{% static 'images/home.png' %}" alt="Home"></a>
     </div>
+	
+	<div class="signout">
+	<!--Got the logout function from this source, need to edit views.py and urls.py as well: https://www.codeswithpankaj.com/post/create-a-login-logout-system-in-django-step-by-step-instructions-->
+			<h4>Click here to log out</h4>
+	<form method="post" action="{% url 'logout' %}">
+					{% csrf_token %}
+					<input type="submit" value="Logout">
+					</form>
+					</div>
+	
     <div class="header">
 		<!--Created a container so container elements will be 85% and a margin of 0 auto:-->
         <div class="container">
@@ -73,14 +83,6 @@
 <p><b>7. The Comptia Security+ Exam is expensive:</b>A single exam voucher costs $404 dollars. Make sure you prepare and study hard, so that you won't have to retake the exam! Also, student discounts are available!</p>
             
 <p>I believe these study strategies will help you prepare to take the CompTIA Security+ exam. Remember you have to be consistent and not just memorize the vocab words. Having an understanding of the concepts is key!</p>
-
-<!--Got the logout function from this source, need to edit views.py and urls.py as well: https://www.codeswithpankaj.com/post/create-a-login-logout-system-in-django-step-by-step-instructions-->
-<h4>Click here to log out</h4>
-	<form method="post" action="{% url 'logout' %}">
-					{% csrf_token %}
-					<input type="submit" value="Logout">
-					</form>
-					
     </main>
     <div class="footer">
         <div class="container">
