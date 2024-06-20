@@ -3,8 +3,7 @@ from . import views
 from django.contrib.auth import views as auth_views
 
 
-#I had trouble figuring out how to add the links to other webpages
-#Ended up looking at the resource on https://www.w3schools.com/django/django_add_link_details.php
+#I removed this comment, misplaced and was meant for my .html file, the comment was for when I couldn't figure out how to change my hyperlinks from html to django format. I used a w3schools link, but it didnt work, it was php not python.
 #Replaced
 urlpatterns = [
     #You have to add views. for the views.py function
