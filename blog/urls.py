@@ -2,13 +2,13 @@ from django.urls import path
 from . import views
 from django.contrib.auth import views as auth_views
 
-<<<<<<< HEAD
+
 #Routes URLs with views.py, so you have to use @login_required(login_url='login'), instead of @login_required(login_url='index.html')
-=======
+
 
 #I removed this comment, misplaced and was meant for my .html file, the comment was for when I couldn't figure out how to change my hyperlinks from html to django format. I used a w3schools link, but it didnt work, it was php not python.
 #Replaced
->>>>>>> origin/master
+
 urlpatterns = [
     #You have to add views. for the views.py function
     path('', views.index, name='index'),
