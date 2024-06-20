@@ -23,7 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-gn)%=wig&9+3()vj92o%s@s$_$ra-qxl+)kslg$-x3plgk7u!)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#settings.py: DEBUG = True Changed this to DEBUG=FALSE, prevents sensitive information from being 
+#released, such as error handling (don't expose unecessary information attackers might use)
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -137,3 +139,22 @@ ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#settings.py, prevents cross site scripting injection attacks to steal user sensitive information
+SECURE_BROWSER_XSS_FILTER=True
+SECURE_CONTENT_TYPE_NOSNIFF=True
+
+#This makes non-HTTPS such HTTP requests autoamtically redirect to HTTPS 
+#(HTTPS uses TLS not SSL, prevents on-path or man in the middle attacks)
+SECURE_SSL_REDIREC=True
+
+#This also prevents on-path or MITM attacks, forcing HTTPS connection
+SECURE_HSTS_SECONDS = 86400
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+#Prevents CSRF attacks, by preventing you from sending session info and 
+#CSRF cookie over HTTP by accident (atker tricks you into into acting on a web
+#app, without your knowledge, takes advantage of trust web app has in your browser)
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
