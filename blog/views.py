@@ -32,6 +32,7 @@ def signup(request):
 
 
 #I'm a little confused, I can't directly type in https://ckim73.pythonanywhere.com/post_list/ when I run the website locally using "python manage.py runserver", but when I commit to github, and run it on pythonanywhere.com, I can still bypass the login process...
+#Problem fixed by clearing history
 #https://stackoverflow.com/questions/3578882/how-to-specify-the-login-required-redirect-url-in-django
 @login_required(login_url='login') #redirects to the index login page, if you someone just tries to type in "http://127.0.0.1:8000/post_list/", without signing in
 def post_list(request):
