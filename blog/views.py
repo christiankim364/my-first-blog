@@ -6,11 +6,15 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
 from django.contrib.auth import  authenticate
 
+#requires login to access separate forms of the website
+#https://stackoverflow.com/questions/3578882/how-to-specify-the-login-required-redirect-url-in-django
+from django.contrib.auth.decorators import login_required
+
 #https://stackoverflow.com/questions/11241080/django-contrib-auth-logout-in-django
 from django.contrib.auth import logout
 from django.shortcuts import redirect
 
-
+#https://www.youtube.com/watch?v=69Mb5yk-q8o
 def index(request):
     form = AuthenticationForm()
     return render(request, 'blog/index.html', {'form': form})
@@ -26,15 +30,21 @@ def signup(request):
             messages.error(request, "You didn't follow the instructions")
     return render(request, 'blog/signup.html', {'form': form})
 
+
+#https://stackoverflow.com/questions/3578882/how-to-specify-the-login-required-redirect-url-in-django
+@login_required(login_url='login') #redirects to the index login page, if you someone just tries to type in "http://127.0.0.1:8000/post_list/", without signing in
 def post_list(request):
     return render(request, 'blog/post_list.html', {})
 
+@login_required(login_url='login')
 def topics(request):
     return render(request, 'blog/topics.html', {})
 
+@login_required(login_url='login')
 def aboutme(request):
     return render(request, 'blog/aboutme.html', {})
 
+@login_required(login_url='login')
 def resources(request):
     return render(request, 'blog/resources.html', {})
 

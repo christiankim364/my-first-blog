@@ -2,10 +2,7 @@ from django.urls import path
 from . import views
 from django.contrib.auth import views as auth_views
 
-
-#I had trouble figuring out how to add the links to other webpages
-#Ended up looking at the resource on https://www.w3schools.com/django/django_add_link_details.php
-#Replaced
+#Routes URLs with views.py, so you have to use @login_required(login_url='login'), instead of @login_required(login_url='index.html')
 urlpatterns = [
     #You have to add views. for the views.py function
     path('', views.index, name='index'),
