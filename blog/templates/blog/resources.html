@@ -59,6 +59,14 @@
                 <li><b>Cyberkraft YouTube Channel:</b> Comptia Security+ isn't only multiple choice. This youtube channel provides explanations on the types of performance based questions you might see on the exam. <a href="https://www.youtube.com/@cyberkraft1">Cyberkraft YouTube channel</a>.</li>
                 <li><b>CompTIA Security+ Exam Prep 4+ iPad App:</b> This app was made by Thanh Hung to help you pass the SY0-601 and SY0-701 exams. Each question has explainations for the correct and incorrect answers. App Store: <a href="https://apps.apple.com/us/app/comptia-security-exam-prep/id1501784033">CompTIA Security+ Exam Prep 4+</a>.</li>
             </ul>
+			
+			<!--Got the logout function from this source, need to edit views.py and urls.py as well: https://www.codeswithpankaj.com/post/create-a-login-logout-system-in-django-step-by-step-instructions-->
+			<h4>Click here to log out</h4>
+	<form method="post" action="{% url 'logout' %}">
+					{% csrf_token %}
+					<input type="submit" value="Logout">
+					</form>
+			
     </main>
     <div class="footer">
         <div class="container">

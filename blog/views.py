@@ -6,6 +6,11 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
 from django.contrib.auth import  authenticate
 
+#https://stackoverflow.com/questions/11241080/django-contrib-auth-logout-in-django
+from django.contrib.auth import logout
+from django.shortcuts import redirect
+
+
 def index(request):
     form = AuthenticationForm()
     return render(request, 'blog/index.html', {'form': form})
@@ -32,3 +37,8 @@ def aboutme(request):
 
 def resources(request):
     return render(request, 'blog/resources.html', {})
+
+#Custom logout_view taken from stack overflow
+def logout_view(request):
+    logout(request)
+    return redirect('index')

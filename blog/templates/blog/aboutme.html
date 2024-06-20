@@ -74,6 +74,13 @@
             
 <p>I believe these study strategies will help you prepare to take the CompTIA Security+ exam. Remember you have to be consistent and not just memorize the vocab words. Having an understanding of the concepts is key!</p>
 
+<!--Got the logout function from this source, need to edit views.py and urls.py as well: https://www.codeswithpankaj.com/post/create-a-login-logout-system-in-django-step-by-step-instructions-->
+<h4>Click here to log out</h4>
+	<form method="post" action="{% url 'logout' %}">
+					{% csrf_token %}
+					<input type="submit" value="Logout">
+					</form>
+					
     </main>
     <div class="footer">
         <div class="container">
