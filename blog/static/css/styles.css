@@ -3,8 +3,13 @@
 /*Styles the portion for the password, overall background color*/
 .background{ /*Sets background to lightgray*/
     background-color: lightgray;
-
 }
+
+.login-logout{
+	margin-left: 30px;
+	padding-bottom: 350px;
+}
+
 body { /*Styles the body of the webpage*/
     font-family: Times, sans-serif;
     line-height: 2;

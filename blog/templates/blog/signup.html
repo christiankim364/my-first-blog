@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-<div class="background">  
+<div class="background">
 <header class="header">
         <div class="container">
     <h1>Sign up for my website: Christian Kim's Blog</h1>
@@ -22,6 +22,7 @@
     </header>
 
 	<div class="background">  
+			<div class="login-logout"> 
     <p><b>
 		{% if messages %}
 			
@@ -35,6 +36,7 @@
 		{{form.as_p}}
 		<input type="submit" />
 		</form>
+		</div>
 		</div>
 	<footer class="footer">
 	 <p>2024 June, MaxxPotential Project Showcase</p>
