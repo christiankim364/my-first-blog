@@ -8,16 +8,60 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <div class="container">
-        <h1>Blog Page</h1>
-        <div>
-            {% for post in posts %}
-                <div>
-                    <h2>{{ post.title }}</h2>
-                    <p>{{ post.text }}</p>
-                    <p>Published: {{ post.published_date }}</p>
-                </div>
-            {% endfor %}
+    <div class="imagelink">
+		<!--For the home link use the same logic as you did for the hyperlinks-->
+		<!--Tried static instead of img Source: https://tutorial.djangogirls.org/en/css/-->
+		<!--I couldn't fix the image problem... Moving onto something else-->				
+	
+		<!--Finally we can apply the same logic to the home page image, static relates to css and images-->
+		<a href="{% url 'post_list' %}"><img src="{% static 'images/home.png' %}" alt="Home"></a>
+		
+
+    </div>
+	
+	<div class="signout">
+	<!--Got the logout function from this source, need to edit views.py and urls.py as well: https://www.codeswithpankaj.com/post/create-a-login-logout-system-in-django-step-by-step-instructions-->
+	<h4>Click here to log out:</h4>
+	<form method="post" action="{% url 'logout' %}">
+					{% csrf_token %}
+					<input type="submit" value="Logout">
+					</form>
+	</div>
+	
+	<!--How to create a header: "https://www.w3schools.com/howto/howto_css_style_header.asp"-->
+    <div class="header">
+	<!--Created a container so container elements will be 85% and a margin of 0 auto:-->
+        <div class="container">
+            <h1>CompTIA Security+ Studies</h1>
+			<!--Nav allows you put navigation links: "https://www.w3schools.com/tags/tryit.asp?filename=tryhtml5_nav"-->
+            <nav>
+                <ul>
+					<!--This was a little confusing, you have to add "{% url 'nameofhtmlfile without .html' %", https://tutorial.djangogirls.org/en/extend_your_application/</a></p>-->
+					<li><a href="{% url 'topics' %}">Comptia Sec+ 601: Study Topics</a></li>
+                    <li><a href="{% url 'resources' %}">Resources I Used</a></li>
+					<li><a href="{% url 'aboutme' %}">About me and how I studied</a></li>
+					<li><a href="{% url 'blog' %}">Blog Post</a></li>						
+				</li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+	<main>
+	<div class="container">
+    <h1>Blog Page</h1>
+    {% for post in posts %}
+        <div class="blog-post">
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.text }}</p>
+            <p>Published: {{ post.published_date }}</p>
+        </div>
+    {% endfor %}
+	</div>
+	</main>
+	<!--Creating a fixed footer Source: "https://www.w3schools.com/html/tryit.asp?filename=tryhtml_lists_unordered"-->
+		<div class="footer">
+        <div class="container">
+            <p>2024 June, MaxxPotential Project Showcase</p>
         </div>
     </div>
 </body>
