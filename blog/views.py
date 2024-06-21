@@ -5,6 +5,8 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
 from django.contrib.auth import  authenticate
+from django.utils import timezone
+from .models import Post
 
 #requires login to access separate forms of the website
 #https://stackoverflow.com/questions/3578882/how-to-specify-the-login-required-redirect-url-in-django
@@ -54,3 +56,9 @@ def resources(request):
 def logout_view(request):
     logout(request)
     return redirect('index')
+
+#Shows the blog posts
+@login_required(login_url='login')
+def post_list(request):
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    return render(request, 'blog/blog_posts.html', {'posts': posts})

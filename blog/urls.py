@@ -19,4 +19,5 @@ urlpatterns = [
     path('topics/', views.topics, name='topics'),
     path('login/', auth_views.LoginView.as_view(template_name='blog/index.html'), name='login'),
     path('logout/', views.logout_view, name='logout'),
+    path('blog/', views.blog, name='blog'),
 ]
