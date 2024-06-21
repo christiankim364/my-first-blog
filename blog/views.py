@@ -4,9 +4,9 @@ from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login
-from django.contrib.auth import  authenticate
 from django.utils import timezone
-from .models import Post
+from .models import Post 
+from django.contrib.auth import  authenticate
 
 #requires login to access separate forms of the website
 #https://stackoverflow.com/questions/3578882/how-to-specify-the-login-required-redirect-url-in-django
@@ -33,9 +33,8 @@ def signup(request):
     return render(request, 'blog/signup.html', {'form': form})
 
 
-#I'm a little confused, I can't directly type in https://ckim73.pythonanywhere.com/post_list/ when I run the website locally using "python manage.py runserver", but when I commit to github, and run it on pythonanywhere.com, I can still bypass the login process...
-#Problem fixed by clearing history
-#https://stackoverflow.com/questions/3578882/how-to-specify-the-login-required-redirect-url-in-django
+#I'm a little confused, 
+#https://stackoverflow.com/questions/3578882/hIow-to-specify-the-login-required-redirect-url-in-django
 @login_required(login_url='login') #redirects to the index login page, if you someone just tries to type in "http://127.0.0.1:8000/post_list/", without signing in
 def post_list(request):
     return render(request, 'blog/post_list.html', {})
@@ -52,13 +51,13 @@ def aboutme(request):
 def resources(request):
     return render(request, 'blog/resources.html', {})
 
+#Added for blog posts
+@login_required(login_url='login')
+def blog(request):  
+    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date') 
+    return render(request, 'blog/blog.html', {'posts': posts})
+
 #Custom logout_view taken from stack overflow
 def logout_view(request):
     logout(request)
     return redirect('index')
-
-#Shows the blog posts
-@login_required(login_url='login')
-def post_list(request):
-    posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'blog/blog_posts.html', {'posts': posts})
