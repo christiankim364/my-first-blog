@@ -20,9 +20,12 @@
     <h1>Sign up for my website: Christian Kim's Blog</h1>
 	</div>
     </header>
-
 	<div class="background">  
-			<div class="login-logout"> 
+			<div class="signup">
+	<h3>Welcome to my sign up page. You can sign up for a username and password
+	to register for my website. After you successfully register for an account, press
+	the redirect link to sign in.
+	</h3>			
     <p><b>
 		{% if messages %}
 			
@@ -36,6 +39,9 @@
 		{{form.as_p}}
 		<input type="submit" />
 		</form>
+		
+		<p><b>Already have an account?</b></p>
+		<p><b><a href="{% url 'index' %}"><span class="button"> Go back to login page:</span></a></b></p>
 		</div>
 		</div>
 	<footer class="footer">

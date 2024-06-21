@@ -21,11 +21,14 @@
     </header>
 
 	<div class="background">
-	<div class="login-logout">
-    <p><b>
-    Sign into my website. This is going to add security controls so only
-    authorized users can uses this website. If you don't have a account 
-    you can sign up below</b></p>
+	<div class="login">
+    <p class="welcome"><b>
+        Hello! Welcome to my Django blog. This is my first time working with a python
+        based web application. I'm continuing to improve my website, so please be patient!
+        I added a username/password requirement to prevent unauthorized users from entering 
+        my blog. 
+        You can sign up for my website to become an authorized user. Once you gain access to the site
+        you can learn about the CompTIA sec+ exam, and how I am preparing to study.</b></p>
     
     {% if messages %}
         {% for message in messages %}
@@ -40,7 +43,7 @@
     </form>
     
     <b>No Account?</b><br>
-    <b><a href="{% url 'signup' %}">Sign Up Here:</a></b>
+    <b><a href="{% url 'signup' %}"><span class="button"> Sign Up Here:</a></b></span>
 	</div>
 	</div>
 	<footer class="footer">

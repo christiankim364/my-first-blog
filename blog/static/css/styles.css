@@ -4,10 +4,52 @@
 .background{ /*Sets background to lightgray*/
     background-color: lightgray;
 }
+.signup{
+	margin-top: 20px;
+    background-color: lightgray;
+	width: 80%;
+	padding-left: 115px;
+	padding-top: 20px;
+	height: 600px;
+}
+.background .login{
+	font-size: 20px;
+	margin: auto;
+	width: 50%;
+    background-color: lightgray;
+	width: 80%;
+	padding-left: 115px;
+	padding-top: 20px;
+	height: 600px;
+}
+.button{
+	background-color: white;
+	border: solid;
+	padding-right: 15px; /*Implementing the CSS I learned from the course 6/20/2024 night */
+	padding-left: 15px;
+	padding-top: 8px;
+	padding-bottom: 10px;
+	border-radius: 14px;
+	margin-left: 5px;
+	transition: opacity 1s;
+	text-decoration: none;
+	transition: opacity 2s;
 
+}
+
+.button:hover{
+	opacity: 0.8;
+}
+.button:active{
+	opacity: 0.6;
+}
+.button a{
+	text-decoration: none;
+}
 .login-logout{
 	margin-left: 30px;
 	padding-bottom: 350px;
+	font-size: 20px;
 }
 
 body { /*Styles the body of the webpage*/
