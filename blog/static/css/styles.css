@@ -1,8 +1,33 @@
+/*Going through each lesson of my html/css course and applying different changes after each lesson*/
 /*Deleted my other CSS because I changed my layout, used the default Django login and signup form. Styles the portion for the password, overall background color*/
 /*Styles the portion for the username*/
 /*Styles the portion for the password, overall background color*/
 .background{ /*Sets background to lightgray*/
     background-color: lightgray;
+}
+.header2{ /*would use h2, but don't want to apply changes to blogpost page*/
+	text-align: center;
+	padding-bottom: 30px;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.about-me-p{
+	font-size:16px;
+}
+.p1{
+	font-size: 18px;
+	}
+.topics-font{
+	font-size: 20px;
+}
+.topics-font-resources{
+	font-size: 16px;
+}
+.lesson7 {
+	border: solid;
+	padding: 40px;
+	background-color: lightyellow;
 }
 .signup{
 	margin-top: 20px;
