@@ -8,6 +8,23 @@
     <!--Using two stylesheets 1, from getbootstrap and 2. from original external styles.css Source: "https://tutorial.djangogirls.org/en/css/" -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
+    <!--Lesson 11 Grid, Using style inside of html because it's easier to make edits, will move when I finish the website-->
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr; /*2fr is 2/3, 1fr is 1/3)*/
+         
+        }
+        .topics-image {
+            width: 90%;
+            height: 300px;
+            margin-bottom: 40px;
+            margin-top: 20px;
+            
+        }
+    </style>
+
 </head>
 <body>
     <div class="imagelink">
@@ -45,6 +62,9 @@
         <div class="lesson7">
             <h2 class="header2">Comptia Sec+ 601: Study Topics:</h2>
         
+            <div class= grid-container> <!--Make sure grid container is underneath the header so it won't affect the positioning of the header-->
+                <div>
+
             <h3>Section 1 – Attacks, Threats, and Vulnerabilities</h3>
             <ul class="topics-font">
                 <li>1.1 – Social Engineering</li>
@@ -100,8 +120,14 @@
                 <li>5.5 – Data Privacy</li>
             </ul>
         </div>
-			
-			
+        <div>
+            <img class="topics-image" src="{% static 'images/threat.png' %}">
+                <img class="topics-image" src="{% static 'images/architecture.png' %}">
+                <img class="topics-image" src="{% static 'images/secure.png' %}">
+                <img class="topics-image" src="{% static 'images/incident-response.png' %}">
+                <img class="topics-image" src="{% static 'images/DPO.png' %}">
+        </div>
+        </div>
     </main>
     <div class="footer">
         <div class="container">

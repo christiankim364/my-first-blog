@@ -33,6 +33,7 @@ def signup(request):
     return render(request, 'blog/signup.html', {'form': form})
 
 
+
 #I'm a little confused, 
 #https://stackoverflow.com/questions/3578882/hIow-to-specify-the-login-required-redirect-url-in-django
 @login_required(login_url='login') #redirects to the index login page, if you someone just tries to type in "http://127.0.0.1:8000/post_list/", without signing in
