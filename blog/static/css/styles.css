@@ -114,7 +114,10 @@ body { /*Styles the body of the webpage*/
 	text-align: center;
 }
 
-.header { /*sets background to rosybrown, text to white, padding */
+.header { /*Changed to use flexbox after going through the course, this will make a flexible layout*/
+	display: flex; /* Added a flex container for the header display */
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
     background: rosybrown;
     color: white;
     padding: 1rem 0;
@@ -128,8 +131,11 @@ header h1 { /*Sets header margin to 0*/
 }
 
 nav ul { /*Gets rid of default bullet points and adds padding*/
+	display: flex; /*Applying flex to the header navigation links*/
     list-style: none;
     padding: 0;
+	justify-content: center; /* Makes the nav links go to the center */
+    width: 100%; /* Make the nav take full width */
 }
 
 nav ul li {  /*Makes the list horizontal by using inline*/
@@ -147,7 +153,10 @@ main { /*Styles the main element*/
     min-height: 400px; 
 }
 
-.footer { /*Styles the footer*/
+.footer { /*Styles the footer, made footer use flexbox after lesson 12*/
+	display: flex; /* Flex container display */
+    justify-content: center; /* horizontal centering */
+    align-items: center; /* vertical centering */
 	left: 0;
 	bottom: 0;
 	width: 100%;
