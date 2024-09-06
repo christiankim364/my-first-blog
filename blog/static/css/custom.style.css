@@ -1,0 +1,65 @@
+/* Custom Header Styles */
+.custom-header {
+  background-color: rosybrown; /* Header background color */
+  padding: 20px 0; /* Top and bottom padding */
+  border-bottom: 2px solid black; /* Bottom border */
+  text-align: center; /* Center content */
+}
+
+.custom-header-container {
+  display: flex; /* Flexbox for layout */
+  align-items: center; /* Vertically center items */
+  justify-content: center; /* Center items horizontally */
+  max-width: 1200px; /* Limit max width */
+  margin: 0 auto; /* Center container */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  gap: 20px; /* Space between items */
+}
+
+.custom-imagelink {
+  margin-right: auto; /* Aligns image to the left */
+}
+
+.custom-logo {
+  width: 80px; /* Set logo width */
+  height: 80px; /* Set logo height */
+  border-radius: 30%; /* Round edges */
+}
+
+.custom-nav {
+  flex: 1; /* Allow nav to grow and take available space */
+}
+
+.custom-nav-list {
+  list-style: none; /* Remove bullet points */
+  display: flex; /* Horizontal list */
+  gap: 30px; /* Space between nav items */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  justify-content: center; /* Center navigation items */
+  flex-wrap: wrap; /* Wrap if space is limited */
+}
+
+.custom-nav-list li a {
+  color: white; /* Text color */
+  text-decoration: none; /* Remove underline */
+  font-size: 1.2em; /* Font size */
+  padding: 5px 10px; /* Padding around links */
+  transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+.custom-nav-list li a:hover {
+  color: #ffd700; /* Change color on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .custom-header-container {
+      flex-direction: column; /* Stack items vertically */
+      align-items: center; /* Center align items */
+  }
+
+  .custom-nav-list {
+      gap: 15px; /* Reduce gap for smaller screens */
+  }
+}

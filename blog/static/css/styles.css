@@ -114,7 +114,7 @@ body { /*Styles the body of the webpage*/
 	text-align: center;
 }
 
-.header { /*Changed to use flexbox after going through the course, this will make a flexible layout*/
+.header1 { /*Changed to use flexbox after going through the course, this will make a flexible layout*/
 	display: flex; /* Added a flex container for the header display */
     justify-content: center; /* Horizontal centering */
     align-items: center; /* Vertical centering */
@@ -122,7 +122,7 @@ body { /*Styles the body of the webpage*/
     color: white;
     padding: 1rem 0;
     text-align: center;
-	border-bottom: solid; /*Added this 6/20/24, trying to make the website look better*/
+		border-bottom: solid; /*Added this 6/20/24, trying to make the website look better*/
     border-color: black; /*Added this 6/20/24, trying to make the website look better*/
 }
 

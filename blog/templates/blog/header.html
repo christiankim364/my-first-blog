@@ -1,0 +1,26 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/header.css' %}">
+
+<!-- Header Section -->
+<div class="header-container">
+    <!-- Home Link -->
+    <div class="header-imagelink">
+        <a href="{% url 'post_list' %}"><img src="{% static 'images/home.png' %}" alt="Home"></a>
+    </div>
+
+    <!-- Navigation Header with Hamburger Menu -->
+    <div class="header-content">
+        <h1 class="header-title">CompTIA Security+ Studies</h1>
+        <nav class="header-nav">
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="header-menu-icon">&#9776;</label>
+            <ul class="header-nav-list">
+                <li class="header-nav-item"><a href="{% url 'topics' %}">Sec+ 601: Study Topics</a></li>
+                <li class="header-nav-item"><a href="{% url 'resources' %}">Resources I Used</a></li>
+                <li class="header-nav-item"><a href="{% url 'aboutme' %}">About me</a></li>
+                <li class="header-nav-item"><a href="{% url 'blog' %}">Blog Post</a></li>
+                <li class="header-nav-item"><a href="{% url 'logout' %}">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>

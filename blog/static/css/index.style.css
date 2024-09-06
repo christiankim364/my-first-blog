@@ -1,0 +1,138 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #C29B9B;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 2.8rem;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+.login {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    text-align: left; /* Align content to the left */
+}
+
+.welcome-message {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.login-form {
+    margin-bottom: 20px;
+    text-align: left; /* Align form content to the left */
+}
+
+.login-form .btn-submit {
+    background-color: lightpink;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
+    max-width: 200px;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.login-form .btn-submit:hover {
+    background-color: rgb(255, 205, 212);
+}
+
+.signup-link {
+    text-align: left; /* Align sign-up link to the left */
+    margin-top: 20px;
+}
+
+.signup-link .btn-signup {
+    background-color: #ed7c59;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.signup-link .btn-signup:hover {
+    background-color: #ffac93;
+}
+
+.footer {
+    background-color: #C29B9B;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: 40px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.footer a {
+    color: #ff7043;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer a:hover {
+    color: #ff5722;
+}
+
+.login, .signup { /* Update both login and signup styles */
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;  /* Keep full width */
+    max-width: 1000px;  /* Increase max width to make the form wider */
+    text-align: left; /* Align content to the left */
+    margin: 20px; /* Add margin to center it if needed */
+}

@@ -1,0 +1,121 @@
+/* Header CSS for Header Section */
+
+.header-imagelink { /* Positions the home link image */
+  position: absolute;
+  top: 18px;
+  left: 5%;
+}
+
+.header-imagelink img { /* Sets width and height of image */
+  width: 80px;  /* Reduced size for better responsiveness */
+  height: 80px; 
+  border-radius: 30%;
+}
+
+.header-container { /* Styles the header container */
+  display: flex;
+  flex-wrap: wrap; /* Allows elements to wrap on smaller screens */
+  justify-content: center;
+  align-items: center;
+  background: rosybrown;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+  border-bottom: solid;
+  border-color: black;
+  position: relative; /* To contain absolute positioning */
+}
+
+.header-content { /* Sets container padding */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center; /* Centers the header text */
+}
+
+.header-title { /* Sets header margin to 0 */
+  margin: 0;
+  font-size: 2.2rem; /* Responsive font size */
+}
+
+.header-nav { /* Styles for the navigation bar */
+  margin-top: 1rem; /* Adds some space above the navigation links */
+  width: 100%; /* Full width for nav bar */
+  text-align: center; /* Centers the nav bar */
+  position: relative; /* For positioning the hamburger icon */
+}
+
+.header-nav-list { /* Styles for the nav list */
+  display: flex; /* Applying flex to the header navigation links */
+  list-style: none;
+  padding: 0;
+  justify-content: center; /* Centers the nav links */
+  margin: 0; /* Removes default margin */
+  flex-wrap: wrap; /* Wraps items on smaller screens */
+}
+
+.header-nav-item { /* Styles the list items */
+  margin: 0 15px;
+}
+
+.header-nav-item a { /* Styles the hyperlinks */
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px; /* Adds some padding for better spacing */
+}
+
+/* Hamburger Menu Icon */
+.header-menu-icon {
+  display: none; /* Hidden by default */
+  font-size: 2rem;
+  cursor: pointer;
+  color: white;
+  margin-top: 10px;
+}
+
+/* Checkbox for Toggling Menu */
+#menu-toggle {
+  display: none; /* Hide checkbox */
+}
+
+/* Show Menu on Checkbox Toggle */
+#menu-toggle:checked + .header-menu-icon + .header-nav-list {
+  display: flex; /* Show nav on toggle */
+  flex-direction: column; /* Stack vertically */
+  align-items: center; /* Center items */
+  background-color: rosybrown; /* Background for nav */
+  width: 100%; /* Full width */
+  position: absolute; /* Overlay effect */
+  top: 60px; /* Position under header */
+  left: 0;
+  z-index: 1; /* On top */
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 1000px) {
+  .header-imagelink { /* Adjust the home image position */
+      position: static; /* Use normal document flow */
+      margin-bottom: 10px; /* Adds some space */
+  }
+
+  .header-container { /* Stack elements vertically */
+      flex-direction: column; /* Column layout */
+      padding: 1rem;
+  }
+
+  .header-title { /* Smaller title for mobile */
+      font-size: 1.8rem;
+  }
+
+  .header-nav { /* Show hamburger icon for small screens */
+      text-align: center; /* Centers the hamburger */
+  }
+
+  .header-nav-list { /* Hide nav list initially */
+      display: none; /* Hide initially */
+  }
+
+  .header-menu-icon { /* Show hamburger icon */
+      display: block; /* Display on small screens */
+  }
+}

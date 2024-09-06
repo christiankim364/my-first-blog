@@ -1,138 +1,112 @@
-<!--loads the static file-->
 {% load static %}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Topics - CompTIA Security+ Studies</title>
-    <!--Using two stylesheets 1, from getbootstrap and 2. from original external styles.css Source: "https://tutorial.djangogirls.org/en/css/" -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Using two stylesheets 1, from getbootstrap and 2. from original external styles.css Source: "https://tutorial.djangogirls.org/en/css/" -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}">
 
-    <!--Lesson 11 Grid, Using style inside of html because it's easier to make edits, will move when I finish the website-->
+    <!-- Lesson 11 Grid, Using style inside of HTML because it's easier to make edits, will move when I finish the website -->
     <style>
         .grid-container {
             display: grid;
             grid-template-columns: 2fr 1fr; /*2fr is 2/3, 1fr is 1/3)*/
-         
         }
         .topics-image {
             width: 90%;
             height: 300px;
             margin-bottom: 40px;
             margin-top: 20px;
-            
         }
     </style>
-
 </head>
 <body>
-    <div class="imagelink">
-        <!--For the home link use the same logic as you did for the hyperlinks-->
-		<!--Tried static instead of img Source: https://tutorial.djangogirls.org/en/css/-->
-		<!--I couldn't fix the image problem... Moving onto something else-->				
-		<!--Finally we can apply the same logic to the home page image, static relates to css and images-->
-		<a href="{% url 'post_list' %}"><img src="{% static 'images/home.png' %}" alt="Home"></a>
-    </div>
-	
-	<div class="signout">
-	<!--Got the logout function from this source, need to edit views.py and urls.py as well: https://www.codeswithpankaj.com/post/create-a-login-logout-system-in-django-step-by-step-instructions-->
-			<h4>Click here to log out:</h4>
-	<form method="post" action="{% url 'logout' %}">
-					{% csrf_token %}
-					<input type="submit" value="Logout">
-					</form>
-	</div>
-	
-    <div class="header">
-        <div class="container">
-            <h1>CompTIA Security+ Studies</h1>
-            <nav>
-                <ul>
-                    <!--This was a little confusing, you have to add "{% url 'nameofhtmlfile without .html' %", https://tutorial.djangogirls.org/en/extend_your_application/</a></p>-->
-					<li><a href="{% url 'topics' %}">Comptia Sec+ 601: Study Topics</a></li>
-                    <li><a href="{% url 'resources' %}">Resources I Used</a></li>
-					<li><a href="{% url 'aboutme' %}">About me and how I studied</a></li>
-					<li><a href="{% url 'blog' %}">Blog Post</a></li>	
-                </ul>
-            </nav>
-        </div>
-    </div>
+<div class="background">
+    <!-- Include Header -->
+    <header class="header">
+        {% include 'blog/header.html' %}
+    </header>
+
     <main>
         <div class="lesson7">
             <h2 class="header2">Comptia Sec+ 601: Study Topics:</h2>
-        
-            <div class= grid-container> <!--Make sure grid container is underneath the header so it won't affect the positioning of the header-->
+
+            <div class="grid-container"> <!-- Make sure grid container is underneath the header so it won't affect the positioning of the header -->
                 <div>
+                    <h3>Section 1 – Attacks, Threats, and Vulnerabilities</h3>
+                    <ul class="topics-font">
+                        <li>1.1 – Social Engineering</li>
+                        <li>1.2 – Attack Types</li>
+                        <li>1.3 – Application Attacks</li>
+                        <li>1.4 – Network Attacks</li>
+                        <li>1.5 – Threat Actors and Vectors</li>
+                        <li>1.6 – Vulnerabilities</li>
+                        <li>1.7 – Security Assessments</li>
+                        <li>1.8 – Penetration Testing</li>
+                    </ul>
 
-            <h3>Section 1 – Attacks, Threats, and Vulnerabilities</h3>
-            <ul class="topics-font">
-                <li>1.1 – Social Engineering</li>
-                <li>1.2 – Attack Types</li>
-                <li>1.3 – Application Attacks</li>
-                <li>1.4 – Network Attacks</li>
-                <li>1.5 – Threat Actors and Vectors</li>
-                <li>1.6 – Vulnerabilities</li>
-                <li>1.7 – Security Assessments</li>
-                <li>1.8 – Penetration Testing</li>
-            </ul>
+                    <h3>Section 2 – Architecture and Design</h3>
+                    <ul class="topics-font">
+                        <li>2.1 – Enterprise Security</li>
+                        <li>2.2 – Virtualization and Cloud Computing</li>
+                        <li>2.3 – Secure Application Development</li>
+                        <li>2.4 – Authentication and Authorization</li>
+                        <li>2.5 – Resilience</li>
+                        <li>2.6 – Embedded Systems</li>
+                        <li>2.7 – Physical Security Controls</li>
+                        <li>2.8 – Cryptographic Concepts</li>
+                    </ul>
 
-            <h3>Section 2 – Architecture and Design</h3>
-            <ul class="topics-font">
-                <li>2.1 – Enterprise Security</li>
-                <li>2.2 – Virtualization and Cloud Computing</li>
-                <li>2.3 – Secure Application Development</li>
-                <li>2.4 – Authentication and Authorization</li>
-                <li>2.5 – Resilience</li>
-                <li>2.6 – Embedded Systems</li>
-                <li>2.7 – Physical Security Controls</li>
-                <li>2.8 – Cryptographic Concepts</li>
-            </ul>
+                    <h3>Section 3 – Implementation</h3>
+                    <ul class="topics-font">
+                        <li>3.1 – Secure Protocols</li>
+                        <li>3.2 – Host and Application Security</li>
+                        <li>3.3 – Secure Network Designs</li>
+                        <li>3.4 – Wireless Security</li>
+                        <li>3.5 – Mobile Security</li>
+                        <li>3.6 – Cloud Security</li>
+                        <li>3.7 – Identity and Account Management</li>
+                        <li>3.8 – Authentication and Authorization Services</li>
+                        <li>3.9 – Public Key Infrastructure</li>
+                    </ul>
 
-            <h3>Section 3 – Implementation</h3>
-            <ul class="topics-font">
-                <li>3.1 – Secure Protocols</li>
-                <li>3.2 – Host and Application Security</li>
-                <li>3.3 – Secure Network Designs</li>
-                <li>3.4 – Wireless Security</li>
-                <li>3.5 – Mobile Security</li>
-                <li>3.6 – Cloud Security</li>
-                <li>3.7 – Identity and Account Management</li>
-                <li>3.8 – Authentication and Authorization Services</li>
-                <li>3.9 – Public Key Infrastructure</li>
-            </ul>
+                    <h3>Section 4 – Operations and Incident Response</h3>
+                    <ul class="topics-font">
+                        <li>4.1 – Security Tools</li>
+                        <li>4.2 – Incident Response</li>
+                        <li>4.3 – Investigations</li>
+                        <li>4.4 – Securing an Environment</li>
+                        <li>4.5 – Digital Forensics</li>
+                    </ul>
 
-            <h3>Section 4 – Operations and Incident Response</h3>
-            <ul class="topics-font">
-                <li>4.1 – Security Tools</li>
-                <li>4.2 – Incident Response</li>
-                <li>4.3 – Investigations</li>
-                <li>4.4 – Securing an Environment</li>
-                <li>4.5 – Digital Forensics</li>
-            </ul>
-
-            <h3>Section 5 – Governance, Risk, and Compliance</h3>
-            <ul class="topics-font">
-                <li>5.1 – Security Controls</li>
-                <li>5.2 – Regulations, Standards, and Frameworks</li>
-                <li>5.3 – Organizational Security Policies</li>
-                <li>5.4 – Risk Management</li>
-                <li>5.5 – Data Privacy</li>
-            </ul>
-        </div>
-        <div>
-            <img class="topics-image" src="{% static 'images/threat.png' %}">
-                <img class="topics-image" src="{% static 'images/architecture.png' %}">
-                <img class="topics-image" src="{% static 'images/secure.png' %}">
-                <img class="topics-image" src="{% static 'images/incident-response.png' %}">
-                <img class="topics-image" src="{% static 'images/DPO.png' %}">
-        </div>
+                    <h3>Section 5 – Governance, Risk, and Compliance</h3>
+                    <ul class="topics-font">
+                        <li>5.1 – Security Controls</li>
+                        <li>5.2 – Regulations, Standards, and Frameworks</li>
+                        <li>5.3 – Organizational Security Policies</li>
+                        <li>5.4 – Risk Management</li>
+                        <li>5.5 – Data Privacy</li>
+                    </ul>
+                </div>
+                <div>
+                    <img class="topics-image" src="{% static 'images/threat.png' %}">
+                    <img class="topics-image" src="{% static 'images/architecture.png' %}">
+                    <img class="topics-image" src="{% static 'images/secure.png' %}">
+                    <img class="topics-image" src="{% static 'images/incident-response.png' %}">
+                    <img class="topics-image" src="{% static 'images/DPO.png' %}">
+                </div>
+            </div>
         </div>
     </main>
-    <div class="footer">
-        <div class="container">
-            <p>2024 June, MaxxPotential Project Showcase</p>
-        </div>
-    </div>
+
+    <!-- Include Footer -->
+    <footer class="footer">
+        {% include 'blog/index.footer.html' %}
+    </footer>
+</div>
 </body>
 </html>

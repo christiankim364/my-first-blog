@@ -1,53 +1,51 @@
-<!--Type Shift+1-->
-<!--Show live server preview-->
-<!--Use Ctrl+Q to reset live server, replaced on my keybinding-->
-
-<!--REMEMBER TO ADD THIS OR IT WONT SHOW UP-->
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.style.css' %}">
+    <title>Sign Up Page</title>
 </head>
 <body>
 <div class="background">
-<header class="header">
-        <div class="container">
-    <h1>Sign up for my website: Christian Kim's Blog</h1>
-	</div>
+    <!-- Include Header -->
+    <header class="header">
+        {% include 'blog/index.header.html' %}
     </header>
-	<div class="background">  
-			<div class="signup">
-	<h3>Welcome to my sign up page. You can sign up for a username and password
-	to register for my website. After you successfully register for an account, press
-	the redirect link to sign in.
-	</h3>			
-    <p><b>
-		{% if messages %}
-			
-			{% for message in messages %}
-			<p>{{message}}</p>
-			{% endfor %} 
-			
-		{% endif %}
-		<form method="post" action="">
-        {%csrf_token %}
-		{{form.as_p}}
-		<input type="submit" />
-		</form>
-		
-		<p><b>Already have an account?</b></p>
-		<p><b><a href="{% url 'index' %}"><span class="button"> Go back to login page:</span></a></b></p>
-		</div>
-		</div>
-	<footer class="footer">
-	 <p>2024 June, MaxxPotential Project Showcase</p>
+
+    <div class="content-wrapper">  
+        <div class="login signup"> <!-- Using the same class as login for styling -->
+            <h3>Welcome to my sign up page. You can sign up for a username and password to register for my website. After you successfully register for an account, press the redirect link to sign in.</h3>
+
+            <!-- Display Messages -->
+            {% if messages %}
+                <div class="messages">
+                    {% for message in messages %}
+                        <p>{{ message }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <!-- Signup Form -->
+            <form method="post" action="" class="login-form"> <!-- Using the same class for consistent styling -->
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn-submit">Sign Up</button>
+            </form>
+
+            <!-- Link to Login Page -->
+            <div class="signup-link">
+                <p>Already have an account?</p>
+                <a href="{% url 'index' %}" class="btn-signup">Go back to Login Page</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include Footer -->
+    <footer class="footer">
+        {% include 'blog/index.footer.html' %}
     </footer>
-		
 </div>  
 </body>
 </html>
