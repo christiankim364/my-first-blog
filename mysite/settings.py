@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'csp',  # Added django-csp for Content Security Policy
 ]
 
 MIDDLEWARE = [
@@ -35,6 +36,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.common.BrokenLinkEmailsMiddleware',  # To help catch broken links in production
+    'csp.middleware.CSPMiddleware',  # Added CSP Middleware for Content Security Policy
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -117,6 +119,19 @@ X_FRAME_OPTIONS = 'DENY'  # Prevent clickjacking
 # Ensure media files can be served securely
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media/'
+
+# Content Security Policy (CSP) settings to pass Mozilla Observatory
+CSP_DEFAULT_SRC = ("'self'",)
+CSP_SCRIPT_SRC = ("'self'",)  # Only allow scripts from the same domain
+CSP_STYLE_SRC = ("'self'", 'https://fonts.googleapis.com')  # Allow Google Fonts
+CSP_IMG_SRC = ("'self'", 'data:')  # Allow images from the same domain and inline data URIs
+CSP_FONT_SRC = ("'self'", 'https://fonts.gstatic.com')  # Allow fonts from Google Fonts
+CSP_CONNECT_SRC = ("'self'",)
+CSP_FRAME_SRC = ("'none'",)
+CSP_OBJECT_SRC = ("'none'",)
+CSP_BASE_URI = ("'self'",)
+CSP_FORM_ACTION = ("'self'",)
+CSP_REPORT_URI = '/csp-violation-report/'  # If you want to receive CSP violation reports (optional)
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
