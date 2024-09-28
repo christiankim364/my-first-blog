@@ -24,7 +24,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
-    'csp',  # Added django-csp for Content Security Policy
+    'csp',
 ]
 
 MIDDLEWARE = [
@@ -35,8 +35,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'django.middleware.common.BrokenLinkEmailsMiddleware',  # To help catch broken links in production
-    'csp.middleware.CSPMiddleware',  # Added CSP Middleware for Content Security Policy
+    'django.middleware.common.BrokenLinkEmailsMiddleware',
+    'csp.middleware.CSPMiddleware',
 ]
 
 ROOT_URLCONF = 'mysite.urls'
@@ -60,7 +60,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 # Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -69,7 +68,6 @@ DATABASES = {
 }
 
 # Password validation
-# https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -86,14 +84,12 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Internationalization
-# https://docs.djangoproject.com/en/5.0/topics/i18n/
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'America/New_York'
 USE_I18N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.0/howto/static-files/
 STATIC_URL = 'static/'
 
 # Static and media file handling for production
@@ -105,16 +101,15 @@ LOGIN_REDIRECT_URL = 'post_list'
 LOGOUT_REDIRECT_URL = 'signin'
 
 # HTTPS and Security settings
-SECURE_SSL_REDIRECT = True  # Redirect HTTP to HTTPS
-SECURE_HSTS_SECONDS = 31536000  # Enforce HTTPS for 1 year
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True  # Apply to all subdomains
-SECURE_HSTS_PRELOAD = True  # Allow preloading of this rule by browsers
+SECURE_SSL_REDIRECT = True
+SECURE_HSTS_SECONDS = 31536000
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+SECURE_HSTS_PRELOAD = True
 
-# Set secure cookie settings for HTTPS
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
-SECURE_BROWSER_XSS_FILTER = True  # Enable the X-XSS-Protection header
-X_FRAME_OPTIONS = 'DENY'  # Prevent clickjacking
+SECURE_BROWSER_XSS_FILTER = True
+X_FRAME_OPTIONS = 'DENY'
 
 # Ensure media files can be served securely
 MEDIA_URL = '/media/'
@@ -122,16 +117,16 @@ MEDIA_ROOT = BASE_DIR / 'media/'
 
 # Content Security Policy (CSP) settings to pass Mozilla Observatory
 CSP_DEFAULT_SRC = ("'self'",)
-CSP_SCRIPT_SRC = ("'self'",)  # Only allow scripts from the same domain
-CSP_STYLE_SRC = ("'self'", 'https://fonts.googleapis.com')  # Allow Google Fonts
-CSP_IMG_SRC = ("'self'", 'data:')  # Allow images from the same domain and inline data URIs
-CSP_FONT_SRC = ("'self'", 'https://fonts.gstatic.com')  # Allow fonts from Google Fonts
+CSP_SCRIPT_SRC = ("'self'",)
+CSP_STYLE_SRC = ("'self'", "'unsafe-inline'", 'https://fonts.googleapis.com', 'https://cdn.jsdelivr.net')  
+CSP_IMG_SRC = ("'self'", 'data:')
+CSP_FONT_SRC = ("'self'", 'https://fonts.gstatic.com')
 CSP_CONNECT_SRC = ("'self'",)
 CSP_FRAME_SRC = ("'none'",)
 CSP_OBJECT_SRC = ("'none'",)
 CSP_BASE_URI = ("'self'",)
 CSP_FORM_ACTION = ("'self'",)
-CSP_REPORT_URI = '/csp-violation-report/'  # If you want to receive CSP violation reports (optional)
+CSP_REPORT_URI = '/csp-violation-report/'
 
 # Default primary key field type
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
